@@ -1,14 +1,10 @@
 const  Discord = require("discord.js");
-<<<<<<< HEAD
 const fs = require("fs")
 const Token = fs.readFile("Token.txt","utf8",(err,data) =>{
     if(err) throw (err);
     console.log(data);
 });
 const Prefix = "!";
-=======
-const token = "NDYzNDg4MTU0NTE5ODYzMjk2.Dh3f3g.ZoQcj5_rx5EGLzyxVTyJAzXrwys"
->>>>>>> parent of c1e3640... Added echo, ping, and rng(embed)
 function GenColor(){
     var r = Math.round(Math.random()*255);
     var g = Math.round(Math.random()*255);
@@ -23,7 +19,6 @@ bot.on("ready",function(){
     console.log("FERRET ACTIVE");
     //console.log("token is",Token);
 });
-<<<<<<< HEAD
 bot.on("message",function(message){
     if(!message.content.startsWith(Prefix))return;
     if(message.channel.name != "bot-spam"&&message.channel.name != "master-ferret"){
@@ -52,7 +47,3 @@ bot.on("message",function(message){
 });
 bot.login(Token);
 //   node index
-=======
-
-
->>>>>>> parent of c1e3640... Added echo, ping, and rng(embed)
