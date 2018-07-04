@@ -1,5 +1,9 @@
 const  Discord = require("discord.js");
-const Token = "NDYzNDg4MTU0NTE5ODYzMjk2.Dh3f3g.ZoQcj5_rx5EGLzyxVTyJAzXrwys"
+const fs = require("fs")
+const Token = fs.readFile("Token.txt","utf8",(err,data) =>{
+    if(err) throw (err);
+    console.log(data);
+});
 const Prefix = "!";
 function GenColor(){
     var r = Math.round(Math.random()*255);
@@ -13,6 +17,7 @@ function GenRand(one,two){
 var bot = new Discord.Client();
 bot.on("ready",function(){
     console.log("FERRET ACTIVE");
+    //console.log("token is",Token);
 });
 bot.on("message",function(message){
     if(!message.content.startsWith(Prefix))return;
@@ -34,7 +39,7 @@ bot.on("message",function(message){
             .setTitle(message.author.username+"'s embed")
             .setDescription(message.author.username+" rolled a "+result)
             .setColor(GenColor())
-        message.channel.sendEmbed(embed);
+        message.channel.sendEmbed(embed); 
         default:
             console.log("Unknown Command");
             break;
